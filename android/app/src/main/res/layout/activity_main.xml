@@ -1,108 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#121212"
-    android:padding="16dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#121212" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📋 Daily Task Manager"
-            android:textColor="#00E5FF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingTop="12dp"
-            android:paddingBottom="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Daily Task Manager" android:textColor="#00E5FF"
+            android:textSize="20sp" android:textStyle="bold" android:gravity="center"
+            android:paddingTop="12dp" android:paddingBottom="8dp"/>
 
-        <TextView
-            android:id="@+id/tvStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:background="#1E1E1E"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp"
-            android:text="در حال بارگذاری..."/>
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="#FFFFFF" android:background="#1E1E1E"
+            android:padding="12dp" android:layout_marginBottom="12dp" android:text="..."/>
 
-        <Button
-            android:id="@+id/btnSettings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⚙ تنظیمات"
-            android:layout_marginBottom="4dp"/>
-
-        <Button
-            android:id="@+id/btnSyncNow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⚡ همگام‌سازی الان"
-            android:layout_marginBottom="4dp"/>
-
-        <Button
-            android:id="@+id/btnStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="▶ شروع سرویس (هر ۵ دقیقه)"
-            android:layout_marginBottom="12dp"/>
+        <Button android:id="@+id/btnSettings"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="⚙ تنظیمات" android:layout_marginBottom="4dp"/>
+        <Button android:id="@+id/btnSyncNow"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="⚡ همگام‌سازی الان" android:layout_marginBottom="4dp"/>
+        <Button android:id="@+id/btnStart"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶ شروع سرویس (هر ۵ دقیقه)" android:layout_marginBottom="12dp"/>
 
         <View android:layout_width="match_parent" android:layout_height="1dp"
             android:background="#333333" android:layout_marginBottom="12dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ورود به روبیکا"
-            android:textColor="#00E5FF"
-            android:textStyle="bold"
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ورود روبیکا" android:textColor="#00E5FF"
+            android:textStyle="bold" android:layout_marginBottom="4dp"/>
+        <Button android:id="@+id/btnSendOtp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="📱 درخواست کد OTP" android:layout_marginBottom="4dp"/>
+        <EditText android:id="@+id/etOtp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="کد OTP را اینجا وارد کن" android:inputType="number"
             android:layout_marginBottom="4dp"/>
+        <Button android:id="@+id/btnVerifyOtp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="✅ تأیید کد" android:layout_marginBottom="12dp"/>
 
-        <Button
-            android:id="@+id/btnSendOtp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📱 درخواست کد OTP"
-            android:layout_marginBottom="4dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="لاگ:"
+                android:textColor="#00E5FF" android:textStyle="bold"
+                android:gravity="center_vertical"/>
+            <Button android:id="@+id/btnCopyLog"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📋 کپی" android:textSize="12sp"/>
+            <Button android:id="@+id/btnClearLog"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🗑 پاک" android:textSize="12sp"/>
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/etOtp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="کد OTP را اینجا وارد کن"
-            android:inputType="number"
-            android:layout_marginBottom="4dp"/>
-
-        <Button
-            android:id="@+id/btnVerifyOtp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="✅ تأیید کد"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="لاگ:"
-            android:textColor="#00E5FF"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvLog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="..."
-            android:textColor="#00FF88"
-            android:background="#0D0D0D"
-            android:padding="10dp"
-            android:fontFamily="monospace"
-            android:textSize="11sp"
-            android:minHeight="150dp"/>
-
+        <TextView android:id="@+id/tvLog"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="..." android:textColor="#00FF88" android:background="#0D0D0D"
+            android:padding="10dp" android:fontFamily="monospace"
+            android:textSize="11sp" android:minHeight="150dp"/>
     </LinearLayout>
 </ScrollView>
