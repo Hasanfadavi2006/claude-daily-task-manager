@@ -6,38 +6,31 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
-
-    private EditText etPhone, etGhToken, etGhOwner, etGhRepo;
-    private Button btnSave;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle s) {
+        super.onCreate(s);
         setContentView(R.layout.activity_settings);
 
-        etPhone   = findViewById(R.id.etPhone);
-        etGhToken = findViewById(R.id.etGhToken);
-        etGhOwner = findViewById(R.id.etGhOwner);
-        etGhRepo  = findViewById(R.id.etGhRepo);
-        btnSave   = findViewById(R.id.btnSave);
+        SharedPreferences p = getSharedPreferences("dailytask", MODE_PRIVATE);
+        EditText etPhone = findViewById(R.id.etPhone);
+        EditText etToken = findViewById(R.id.etGhToken);
+        EditText etOwner = findViewById(R.id.etGhOwner);
+        EditText etRepo  = findViewById(R.id.etGhRepo);
 
-        SharedPreferences prefs = getSharedPreferences("dailytask", MODE_PRIVATE);
-        etPhone.setText(prefs.getString("rubika_phone", ""));
-        etGhToken.setText(prefs.getString("gh_token", ""));
-        etGhOwner.setText(prefs.getString("gh_owner", "hasanfadavi2006"));
-        etGhRepo.setText(prefs.getString("gh_repo", "claude-daily-task-manager"));
+        etPhone.setText(p.getString("rubika_phone",""));
+        etToken.setText(p.getString("gh_token",""));
+        etOwner.setText(p.getString("gh_owner","hasanfadavi2006"));
+        etRepo.setText(p.getString("gh_repo","claude-daily-task-manager"));
 
-        btnSave.setOnClickListener(v -> save(prefs));
-    }
-
-    private void save(SharedPreferences prefs) {
-        prefs.edit()
-            .putString("rubika_phone", etPhone.getText().toString().trim())
-            .putString("gh_token",     etGhToken.getText().toString().trim())
-            .putString("gh_owner",     etGhOwner.getText().toString().trim())
-            .putString("gh_repo",      etGhRepo.getText().toString().trim())
-            .apply();
-        Toast.makeText(this, "ذخیره شد ✅", Toast.LENGTH_SHORT).show();
-        finish();
+        findViewById(R.id.btnSave).setOnClickListener(v -> {
+            p.edit()
+                .putString("rubika_phone", etPhone.getText().toString().trim())
+                .putString("gh_token",     etToken.getText().toString().trim())
+                .putString("gh_owner",     etOwner.getText().toString().trim())
+                .putString("gh_repo",      etRepo.getText().toString().trim())
+                .apply();
+            Toast.makeText(this, "ذخیره شد ✅", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
 }

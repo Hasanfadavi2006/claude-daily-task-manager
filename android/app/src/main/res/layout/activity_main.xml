@@ -2,56 +2,73 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121212"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="دستیار برنامه‌ریز روزانه"
+            android:text="📋 Daily Task Manager"
+            android:textColor="#00E5FF"
             android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:padding="12dp" />
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp"/>
 
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="در حال بارگذاری..."
+            android:textColor="#FFFFFF"
+            android:background="#1E1E1E"
             android:padding="12dp"
-            android:background="#F0F0F0"
-            android:layout_marginBottom="16dp"
-            android:textSize="14sp" />
+            android:layout_marginBottom="12dp"
+            android:text="در حال بارگذاری..."/>
 
         <Button
             android:id="@+id/btnSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="⚙ تنظیمات (شماره و GitHub)"
-            android:layout_marginBottom="8dp" />
+            android:text="⚙ تنظیمات"
+            android:layout_marginBottom="4dp"/>
+
+        <Button
+            android:id="@+id/btnSyncNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚡ همگام‌سازی الان"
+            android:layout_marginBottom="4dp"/>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▶ شروع سرویس (هر ۵ دقیقه)"
+            android:layout_marginBottom="12dp"/>
 
         <View android:layout_width="match_parent" android:layout_height="1dp"
-            android:background="#CCCCCC" android:layout_margin="8dp" />
+            android:background="#333333" android:layout_marginBottom="12dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ورود به روبیکا"
+            android:textColor="#00E5FF"
             android:textStyle="bold"
-            android:layout_marginTop="8dp" />
+            android:layout_marginBottom="4dp"/>
 
         <Button
             android:id="@+id/btnSendOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="دریافت کد OTP از روبیکا"
-            android:layout_marginTop="8dp" />
+            android:text="📱 درخواست کد OTP"
+            android:layout_marginBottom="4dp"/>
 
         <EditText
             android:id="@+id/etOtp"
@@ -59,43 +76,33 @@
             android:layout_height="wrap_content"
             android:hint="کد OTP را اینجا وارد کن"
             android:inputType="number"
-            android:layout_marginTop="8dp" />
+            android:layout_marginBottom="4dp"/>
 
         <Button
             android:id="@+id/btnVerifyOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="تأیید کد و ورود"
-            android:layout_marginTop="4dp" />
-
-        <View android:layout_width="match_parent" android:layout_height="1dp"
-            android:background="#CCCCCC" android:layout_margin="8dp" />
-
-        <Button
-            android:id="@+id/btnStartService"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="▶ شروع جمع‌آوری (هر ۵ دقیقه)"
-            android:layout_marginTop="8dp" />
+            android:text="✅ تأیید کد"
+            android:layout_marginBottom="12dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="لاگ‌های اخیر:"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:text="لاگ:"
+            android:textColor="#00E5FF"
+            android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/tvLogs"
+            android:id="@+id/tvLog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:background="#1C1C1C"
+            android:text="..."
             android:textColor="#00FF88"
-            android:textSize="11sp"
+            android:background="#0D0D0D"
+            android:padding="10dp"
             android:fontFamily="monospace"
-            android:minHeight="120dp"
-            android:layout_marginTop="4dp" />
+            android:textSize="11sp"
+            android:minHeight="150dp"/>
 
     </LinearLayout>
 </ScrollView>
